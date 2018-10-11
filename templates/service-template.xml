@@ -1,0 +1,11 @@
+<config-template xmlns="http://tail-f.com/ns/config/1.0">
+    <services xmlns="http://tail-f.com/ns/ncs">
+        <c-queue-test1 xmlns="http://cisco.com/services/cqueuenotifytest">
+            <vrf>
+                <name>vrf-{$vrf_id}</name>
+                <device>{name}</device>
+                <id>{$vrf_id}</id>
+            </vrf>
+        </c-queue-test1>
+    </services>
+</config-template>

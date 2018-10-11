@@ -40,6 +40,11 @@ module action-trigger {
           }
           mandatory true;
         }
+        leaf vrf-id {
+          tailf:info "VRF ID";
+          type uint16;
+          mandatory true;
+        }
       }
       output {
         leaf result {
