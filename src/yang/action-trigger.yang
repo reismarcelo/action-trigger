@@ -1,0 +1,51 @@
+module action-trigger {
+
+  namespace "http://cisco.com/services/action-trigger";
+  prefix action-trigger;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-common {
+    prefix tailf;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  organization "Cisco Systems, Inc.";
+
+  contact
+    " Marcelo Reis
+      mareis@cisco.com
+    ";
+
+  description
+    "Example of an action that calls fetch-host-keys on the specified device.
+    ";
+
+  revision 2018-10-06 {
+    description
+      "Initial revision.";
+  }
+
+  container action {
+    tailf:action fetch-keys {
+      tailf:actionpoint action-trigger-action;
+      input {
+        leaf device {
+          tailf:info "Device name";
+          type leafref {
+            path "/ncs:devices/ncs:device/ncs:name";
+          }
+          mandatory true;
+        }
+      }
+      output {
+        leaf result {
+          type string;
+        }
+      }
+    }
+  }
+}

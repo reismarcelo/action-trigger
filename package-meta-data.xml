@@ -1,0 +1,13 @@
+<ncs-package xmlns="http://tail-f.com/ns/ncs-packages">
+  <name>action-trigger</name>
+  <package-version>1.0</package-version>
+  <description>Calls fetch-host-keys on the specified device</description>
+  <ncs-min-version>4.6</ncs-min-version>
+
+  <component>
+    <name>main</name>
+    <application>
+      <python-class-name>action_trigger.main.Main</python-class-name>
+    </application>
+  </component>
+</ncs-package>
